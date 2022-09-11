@@ -1,4 +1,4 @@
-with open('./files/recepts_of_dishes.txt', encoding="utf-8") as f:
+with open('./recepts_of_dishes.txt', encoding="utf-8") as f:
     read_data = f.read().split('\n\n')
 cook_book = {}
 list = []
