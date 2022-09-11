@@ -1,0 +1,22 @@
+with open('./files/recepts_of_dishes.txt', encoding="utf-8") as f:
+    read_data = f.read().split('\n\n')
+cook_book = {}
+list = []
+for i in read_data:
+    i = i.split('\n')
+    key = i[0]
+    value = i[2:]
+    cook_book[key]= value
+for key, value in cook_book.items():
+    for v in value:
+        v = v.split(' | ')
+        result = {
+            'ingredient_name': v[0],
+            'quantity': v[1],
+            'measure': v[2]
+        }
+        list.append(result)
+        cook_book[key]= list
+        # cook_book[key]= list
+
+print(cook_book)
